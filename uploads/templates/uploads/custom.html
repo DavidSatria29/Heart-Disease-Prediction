@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h3>Tipe Data Dan Kelas Label </h3>
+            <form action="{% url 'classifier:model' dataset_id=dataset_id %}" method="post">
+                {% csrf_token %}
+                {% for dataset in datasets %}
+                    {% if dataset != 'csrfmiddlewaretoken' %}
+                        <label for="{{ dataset }}">{{ dataset }}</label>
+                        <select name="{{ dataset }}" id="{{ dataset }}">
+                            <option value="">--Silahkan pilih---</option>
+                            <option value="category">Kategori</option>
+                            <option value="numeric">Numerik</option>
+                            <option value="not-selected">Tidak Dipilih</option>
+                        </select>
+                    {% endif %}
+                {% endfor %}
+                <br>
+                {% if dataset != 'csrfmiddlewaretoken' %}
+                <label for="label">Kelas Label</label>
+                <select name="label" id="label">
+                    <option value="">--Silahkan pilih---</option>
+                    {% for dataset in datasets %}
+                        {% if dataset != 'csrfmiddlewaretoken' %}
+                            <option value="{{ dataset }}">{{ dataset }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+                {% endif %}
+                <input type="submit" value="Upload">
+            </form>
+
+    </div>
+</body>
+</html>

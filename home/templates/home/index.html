@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menampilkan Semua Dataset</title>
+</head>
+<body>
+    <h1>Daftar Dataset</h1>
+    <ul>
+        {% for dataset in datasets %}
+            <li><a href="{% url 'classifier:model' dataset_id=dataset.id %}">{{ dataset.title }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'uploads:index' %}">Upload Dataset</a>
+</body>
+</html>

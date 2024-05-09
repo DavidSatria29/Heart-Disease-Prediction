@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembentukan Model</title>
+</head>
+<body>
+
+    <h3>Decision Tree Classifier</h3>
+    {% if performances is not None %}
+        <h1>Classification Report</h1>
+        <table>
+            <tr>
+                <th>Label</th>
+                <th>Precision</th>
+                <th>Recall</th>
+                <th>Support</th>
+            </tr>
+            {% for label, metrics in performances.items %}
+            <tr>
+                <td>{{ label }}</td>
+                <td>{{ metrics.precision }}</td>
+                <td>{{ metrics.recall }}</td>
+                <td>{{ metrics.support }}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="4">Accuracy</td>
+                <td>{{ performances.accuracy }}</td>
+            </tr>
+        </table>
+    {% endif %}
+    <form action="{% url 'classifier:predict' dataset_id=dataset_id %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="label" value="{{ label }}">
+        <input type="submit" value="Prediksi">
+    </form>
+
+    <a href="{% url 'home:index' %}">Kembali Ke Home</a>
+</body>
+</html>

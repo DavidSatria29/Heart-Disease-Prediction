@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Prediksi Instance Baru</title>
+</head>
+<body>
+    <h1>Hasil Prediksi</h1>
+    {% if prediction is not None %}
+        <h3>Hasil Prediksi</h3>
+        {% if prediction == 1 %}
+            <p>Maaf, Anda Terkena Penyakit Jantung</p>
+        {% else %}
+            <p>Selamat, Anda Tidak Terkena Penyakit Jantung</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
