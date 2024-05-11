@@ -8,8 +8,8 @@ from uploads.models import Dataset
 from sklearn.model_selection import KFold
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import classification_report
-from sklearn.tree import export_graphviz
-from graphviz import Source
+import graphviz
+from sklearn import tree
 from .models import Model
 import joblib
 
@@ -34,17 +34,34 @@ def model(request, dataset_id):
                 numerical.append(key)
             elif value == 'not_selected':
                 not_selected.append(key)
+
+        # Load dataset
         dataset = Dataset.objects.get(id=dataset_id)
         dataset_filename = dataset.file
         dataset_path = os.path.join(settings.MEDIA_ROOT, str(dataset_filename))
+
+        # Preprocess dataset
         dataset = pd.read_csv(dataset_path)
         dataset.drop(not_selected, axis=1, inplace=True)
+        dataset.to_csv(dataset_path, index=False)
+
+        # Load dataset
+        dataset = pd.read_csv(dataset_path)
+
+        # Convert categorical data type
         dataset[categorical] = dataset[categorical].astype('category')
 
+        # set label and features
         label = request.POST['label']
         attr_label = dataset[label]
         attr_features = dataset.drop(label, axis=1)
 
+        # get parameters for model
+        max_depth = int(request.POST['max_depth'])
+        min_samples_split = int(request.POST['min_samples_split'])  
+        min_samples_leaf = int(request.POST['min_samples_leaf'])
+
+        # Train model
         kf = KFold(n_splits=10)
         performances = []
         models = []
@@ -53,7 +70,7 @@ def model(request, dataset_id):
             X_train, X_test = attr_features.iloc[train_index], attr_features.iloc[test_index]
             y_train, y_test = attr_label.iloc[train_index], attr_label.iloc[test_index]
             # Latih model
-            clf = DecisionTreeClassifier()
+            clf = DecisionTreeClassifier(max_depth=max_depth, min_samples_split=min_samples_split, min_samples_leaf=min_samples_leaf)
             clf.fit(X_train, y_train)
             
             # Evaluasi model
@@ -65,22 +82,25 @@ def model(request, dataset_id):
             models.append(clf)
             performances.append(accuracy)
             report_list.append(report_model)
+
+        # Pilih model terbaik
         best_model_index = performances.index(max(performances))
         report_metrics = report_list[best_model_index]
         best_model = models[best_model_index]
 
         # Simpan model ke dalam file
         file_path = f'models/{dataset_title}.joblib'
-        file_source = f'image/{file_path}.png'
+        file_source = f'image/{dataset_title}'
         joblib.dump(best_model, 'media/'+ file_path)
-        # dot_data =  export_graphviz(best_model, out_file=None, feature_names=attr_features.columns, class_names=best_model.classes_, filled=True, rounded=True, special_characters=True)
-        # Source(dot_data).render('media/'+file_source, format='png')
+        dot_data = tree.export_graphviz(best_model, out_file=None, filled=True, rounded=True, special_characters=True)
+        graph = graphviz.Source(dot_data)
+        graph.render('media/'+ file_source, format='png')
 
         # Simpan model ke dalam database
         model.title = dataset_title
         model.file = file_path
         model.label = label
-        # model.image = file_source
+        model.image = file_source + '.png'
         model.save()
 
         # deploy to view

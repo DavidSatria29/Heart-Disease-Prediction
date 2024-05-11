@@ -10,7 +10,7 @@
         {% csrf_token %}
         {% for feature in features %}
             <label for="{{ feature }}">{{ feature }}</label>
-            <input type="number" name="{{ feature }}" id="{{ feature }}">
+            <input type="number" name="{{ feature }}" id="{{ feature }}" step="any">
         {% endfor %}
         <input type="submit" value="Prediksi">
     </form>

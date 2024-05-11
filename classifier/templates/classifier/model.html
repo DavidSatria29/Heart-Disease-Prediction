@@ -26,10 +26,10 @@
                 <td>{{ metrics.support }}</td>
             </tr>
             {% endfor %}
-            <tr>
+            {% comment %} <tr>
                 <td colspan="4">Accuracy</td>
                 <td>{{ performances.accuracy }}</td>
-            </tr>
+            </tr> {% endcomment %}
         </table>
     {% endif %}
     <form action="{% url 'classifier:predict' dataset_id=dataset_id %}" method="post">
