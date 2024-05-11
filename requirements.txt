@@ -2,3 +2,4 @@ numpy
 pandas
 sckit-learn
 joblib
+graphviz
