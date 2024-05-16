@@ -26,32 +26,8 @@ def custom(request, dataset_id):
     dataset_filename = dataset.file
     dataset_path = os.path.join(settings.MEDIA_ROOT, str(dataset_filename))
     dataset = pd.read_csv(dataset_path)
+    show = dataset.head(10)
     context['datasets'] = dataset.columns.tolist()
+    context['show'] = show.to_html(index=False)
     return render(request, 'uploads/custom.html', context)
 
-# def set_attr(request, dataset_id):
-#     context = {'dataset_id': dataset_id}
-#     if request.method == 'POST':
-#         print(request.POST)
-#         categorical = []
-#         numerical = []
-
-#         for key, value in request.POST.items():
-#             if value == 'category':
-#                 categorical.append(key)
-#             elif value == 'numeric':
-#                 numerical.append(key)
-
-
-#         dataset = Dataset.objects.get(id=dataset_id)
-#         dataset_filename = dataset.file
-#         dataset_path = os.path.join(settings.MEDIA_ROOT, str(dataset_filename))
-#         dataset = pd.read_csv(dataset_path)
-
-#         dataset[categorical] = dataset[categorical].astype('category')
-
-#         label = request.POST['label']
-#         attr_label = dataset[label]
-#         attr_features = dataset.drop(label, axis=1)
-#     else:
-#         return redirect('uploads:custom', dataset_id=dataset_id)
