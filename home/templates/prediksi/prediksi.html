@@ -1,0 +1,264 @@
+{% load static %}
+
+<!-- myapp/templates/prediksi.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+	<!-- title -->
+	<title>Prediksi</title>
+
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.png' %}">
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+	<!-- owl carousel -->
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+	<!-- magnific popup -->
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+	<!-- animate css -->
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<!-- mean menu css -->
+	<link rel="stylesheet" href="{% static 'css/meanmenu.min.css' %}">
+	<!-- main style -->
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+	<!-- responsive -->
+	<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+</head>
+<body>
+	
+	<!--PreLoader-->
+    <div class="loader">
+        <div class="loader-inner">
+            <div class="circle"></div>
+        </div>
+    </div>
+    <!--PreLoader Ends-->
+	
+	<!-- header -->
+	<div class="top-header-area" id="sticker">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 text-center">
+					<div class="main-menu-wrap">
+						<!-- logo -->
+						<div class="site-logo">
+							<a href="{% url 'home:index' %}">
+								<img src="{% static 'img/logo.png' %}" alt="">
+							</a>
+						</div>
+						<!-- logo -->
+
+						<!-- menu start -->
+						<nav class="main-menu">
+							<ul>
+								<li><a href="{% url 'home:index' %}">Home</a></li>
+								<li><a href="{% url 'home:about' %}">About</a></li>
+								<li><a href="{% url 'home:panduan' %}">Panduan</a></li>
+								<li class="current-list-item"><a href="{% url 'home:prediksi' %}">Prediksi</a></li>
+								<li><a href="{% url 'home:contact' %}">Contact</a></li>
+							</ul>
+						</nav>
+						<div class="mobile-menu"></div>
+						<!-- menu end -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end header -->
+	
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>Coba Sekarang</p>
+						<h1>Prediksi</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+
+	<!-- Upload Dataset Start -->
+	<div class="single-product mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<!-- <div class="col-md-1">
+					<img src="{% static 'img/number/1.png' %}" alt="">
+				</div> -->
+				<div class="col-md-11">
+					<div class="single-product-content">
+						<form action="" method="post" enctype="multipart/form-data">
+							<div class="form-group">
+								<h2 for="exampleFormControlFile1" class="upload-dataset-title">Upload Dataset</h2>
+								<input type="text" placeholder="Nama Dataset" class="dataset-name" name="dataset-name" required>
+								<input type="file" class="form-control-file dataset-input" id="upload-dataset" name="file" required>
+								<div class="file-name" id="file-name"></div>
+							</div>
+						</form>
+						<button class="submit-form-btn">Upload</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Upload Dataset End -->
+
+	<!-- Pelabelan Dataset Start -->
+	<div class="single-product mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<!-- <div class="col-md-1">
+					<img src="{% static 'img/number/1.png' %}" alt="">
+				</div> -->
+				<div class="col-md-11">
+					<div class="single-product-content">
+						<form action="" method="post" enctype="multipart/form-data">
+							<div class="form-group">
+								<h2 for="exampleFormControlFile1" class="upload-dataset-title">Tipe Data Dan Kelas Label</h2>
+								<label for="atribut-dataset" class="atribut-dataset-title">Atribut Dataset</label>
+								<select name="atribut-dataset" id="{{ dataset }}">
+									<option value="">-- Silahkan pilih --</option>
+									<option value="category">Kategori</option>
+									<option value="numeric">Numerik</option>
+									<option value="not-selected">Tidak Dipilih</option>
+								</select>
+								<label for="atribut-dataset" class="atribut-dataset-title">Kelas Label</label>
+								<select name="atribut-dataset" id="{{ dataset }}">
+									<option value="">-- Silahkan pilih --</option>
+									<option value="category">Kelas Label dari Dataset</option>
+								</select>
+								<label for="atribut-dataset" class="atribut-dataset-title">Max Depth</label>
+								<input type="number" class="depth-input">
+								<label for="atribut-dataset" class="atribut-dataset-title">Min Samples Split</label>
+								<input type="number" class="depth-input">
+								<label for="atribut-dataset" class="atribut-dataset-title">Min Samples Leaf</label>
+								<input type="number" class="depth-input">
+							</div>
+						</form>
+						<button class="submit-form-btn">Submit</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Pelabelan Dataset End -->
+
+	<!-- Prediksi Start -->
+	<div class="single-product mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<!-- <div class="col-md-1">
+					<img src="{% static 'img/number/1.png' %}" alt="">
+				</div> -->
+				<div class="col-md-11">
+					<div class="single-product-content">
+						<form action="" method="post" enctype="multipart/form-data">
+							<div class="form-group">
+								<h2 for="exampleFormControlFile1" class="upload-dataset-title">Prediksi</h2>
+								<label for="atribut-dataset" class="atribut-dataset-title">Atribut Dataset</label>
+								<p>Pilih 1 atau 0 (1 untuk ya dan laki-laki / 0 untuk tidak dan perempuan)</p>
+								<input type="number" class="input-prediksi" placeholder="Atribut Dataset">
+							</div>
+						</form>
+						<button class="submit-form-btn">Submit</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Prediksi End -->
+
+	<!-- footer -->
+	<div class="footer-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6">
+					<div class="footer-box about-widget">
+						<h2 class="widget-title">About us</h2>
+						<p>Dalam upaya mitigasi penyakit jantung, perkembangan teknologi telah memberikan alat yang dapat membantu dalam diagnosis dini penyakit jantung. Dengan demikian, web prediksi ini dapat menjadi alat yang sangat berguna untuk membantu dalam deteksi dini, pencegahan, dan pengelolaan penyakit jantung.</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box get-in-touch">
+						<h2 class="widget-title">Get in Touch</h2>
+						<ul>
+							<li>Universitas Negeri Malang, Malang</li>
+							<li><a href="https://um.ac.id/">www.um.ac.id</a></li>
+							<li>(0341) 551312</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box pages">
+						<h2 class="widget-title">Pages</h2>
+						<ul>
+							<li><a href="{% url 'home:index' %}">Home</a></li>
+							<li><a href="{% url 'home:about' %}">About</a></li>
+							<li><a href="{% url 'home:panduan' %}">Panduan</a></li>
+							<li><a href="{% url 'home:prediksi' %}">Prediksi</a></li>
+							<li><a href="{% url 'home:contact' %}">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end footer -->
+	
+	<!-- copyright -->
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-12">
+					<p>Copyrights &copy; 2024 - <a>Kelompok 3 Data Science | S1 TI A 2022</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end copyright -->
+	
+	<script>
+        document.getElementById('upload-dataset').addEventListener('change', function() {
+            var fileName = this.files[0].name;
+            document.getElementById('file-name').textContent = 'Dataset yang telah dipilih: ' + fileName;
+        });
+    </script>
+	<!-- jquery -->
+	<script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+	<!-- bootstrap -->
+	<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+	<!-- count down -->
+	<script src="{% static 'js/jquery.countdown.js' %}"></script>
+	<!-- isotope -->
+	<script src="{% static 'js/jquery.isotope-3.0.6.min.js' %}"></script>
+	<!-- waypoints -->
+	<script src="{% static 'js/waypoints.js' %}"></script>
+	<!-- owl carousel -->
+	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+	<!-- magnific popup -->
+	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+	<!-- mean menu -->
+	<script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+	<!-- sticker js -->
+	<script src="{% static 'js/sticker.js' %}"></script>
+	<!-- main js -->
+	<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

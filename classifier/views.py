@@ -109,9 +109,15 @@ def model(request, dataset_id):
         return render(request, 'classifier/model.html', context)
     else:
         model_title = Model.objects.get(title=dataset_title)
+        model_image = model_title.image
         model_label = model_title.label
         context['label'] = model_label
+        context['image'] = model_title.image
         return render(request, 'classifier/model.html', context)
+    
+    
+    
+
     
 def predict(request, dataset_id):
     context = {'dataset_id': dataset_id}

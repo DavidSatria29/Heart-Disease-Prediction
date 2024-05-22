@@ -1,0 +1,329 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+	<!-- title -->
+	<title>Panduan</title>
+
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.png' %}">
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+	<!-- owl carousel -->
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+	<!-- magnific popup -->
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+	<!-- animate css -->
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<!-- mean menu css -->
+	<link rel="stylesheet" href="{% static 'css/meanmenu.min.css' %}">
+	<!-- main style -->
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+	<!-- responsive -->
+	<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+</head>
+<body>
+	
+	<!--PreLoader-->
+    <div class="loader">
+        <div class="loader-inner">
+            <div class="circle"></div>
+        </div>
+    </div>
+    <!--PreLoader Ends-->
+	
+	<!-- header -->
+	<div class="top-header-area" id="sticker">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 text-center">
+					<div class="main-menu-wrap">
+						<!-- logo -->
+						<div class="site-logo">
+							<a href="{% url 'home:index' %}">
+								<img src="{% static 'img/logo.png' %}" alt="">
+							</a>
+						</div>
+						<!-- logo -->
+
+						<!-- menu start -->
+						<nav class="main-menu">
+							<ul>
+								<li><a href="{% url 'home:index' %}">Home</a></li>
+								<li><a href="{% url 'home:about' %}">About</a></li>
+								<li class="current-list-item"><a href="{% url 'home:panduan' %}">Panduan</a></li>
+								<li><a href="{% url 'uploads:index' %}">Prediksi</a></li>
+								<li><a href="{% url 'home:contact' %}">Contact</a></li>
+							</ul>
+						</nav>
+						<div class="mobile-menu"></div>
+						<!-- menu end -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end header -->
+	
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>Tutorial Prediksi</p>
+						<h1>Panduan Aplikasi</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+
+	<!-- single product -->
+	<div class="single-product mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-1">
+					<img src="{% static 'img/number/1.png' %}" alt="">
+				</div>
+				<div class="col-md-11">
+					<div class="single-product-content">
+						<h3>Buka Halaman Prediksi</h3>
+						<p><strong>Akses Website: </strong>Buka halaman web prediksi gagal jantung melalui browser Anda.</p>
+						<a href="{% url 'uploads:index' %}" class="cart-btn"><i class="fas fa-heart"></i>Klik Disini</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end single product -->
+
+	<!-- single product -->
+	<div class="single-product mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-1">
+					<img src="{% static 'img/number/2.png' %}" alt="">
+				</div>
+				<div class="col-md-11">
+					<div class="single-product-content">
+						<h3>Upload Dataset</h3>
+						<p><strong>Form Upload Dataset: </strong>Temukan form untuk upload dataset pada halaman.</p>
+						<p><strong>Upload File: </strong>Klik tombol “Choose File” atau “Browse” dan pilih file dataset gagal jantung dalam format .xlsx atau .csv dari komputer Anda.</p>
+						<p><strong>Submit Dataset: </strong>Setelah memilih file, klik tombol “Upload” untuk mengunggah dataset ke server.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end single product -->
+
+	<!-- single product -->
+	<div class="single-product mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-1">
+					<img src="{% static 'img/number/3.png' %}" alt="">
+				</div>
+				<div class="col-md-11">
+					<div class="single-product-content">
+						<h3>Pilih Tipe Data dan Kelas Label</h3>
+						<p><strong>Tentukan Kolom yang Tidak Digunakan: </strong>Pilih kolom-kolom yang tidak akan digunakan dalam analisis. Kolom ini mungkin termasuk ID unik, nama pasien, atau informasi lainnya yang tidak relevan untuk prediksi.</p>
+						<p><strong>Tentukan Tipe Data: </strong>Pilih atribut yang akan digunakan sebagai kelas label (target) untuk prediksi.</p>
+						<p><strong>Set Kelas Label: </strong>Klik tombol “Choose File” atau “Browse” dan pilih file dataset gagal jantung dalam format .xlsx atau .csv dari komputer Anda.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end single product -->
+
+	<!-- single product -->
+	<div class="single-product mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-1">
+					<img src="{% static 'img/number/4.png' %}" alt="">
+				</div>
+				<div class="col-md-11">
+					<div class="single-product-content">
+						<h3>Atur Parameter Model Decision Tree</h3>
+						<p><strong>Max Depth:</strong>
+							<ul>
+								<li>
+									<strong>Definisi: </strong>Batas maksimum kedalaman pohon keputusan.
+								</li>
+								<li>
+									<strong>Fungsi: </strong>Membatasi kedalaman pohon untuk mencegah overfitting.
+								</li>
+							</ul>
+						</p>
+						<p><strong>Min Samples Split:</strong>
+							<ul>
+								<li>
+									<strong>Definisi: </strong>Jumlah minimum sampel yang diperlukan untuk membagi node internal.
+								</li>
+								<li>
+									<strong>Fungsi: </strong>Memastikan bahwa node tidak dibagi jika tidak ada cukup data, untuk menghindari pembagian yang tidak perlu.
+								</li>
+							</ul>
+						</p>
+						<p><strong>Min Samples Leaf:</strong>
+							<ul>
+								<li>
+									<strong>Definisi: </strong>Jumlah minimum sampel yang harus ada di leaf node.
+								</li>
+								<li>
+									<strong>Fungsi: </strong>Mencegah pembentukan leaf node dengan terlalu sedikit sampel yang dapat menyebabkan overfitting.
+								</li>
+							</ul>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end single product -->
+
+	<!-- single product -->
+	<div class="single-product mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-1">
+					<img src="{% static 'img/number/5.png' %}" alt="">
+				</div>
+				<div class="col-md-11">
+					<div class="single-product-content">
+						<h3>Tampilkan Hasil Model</h3>
+						<p><strong>Proses Model: </strong>Setelah parameter diatur, klik tombol “Run” atau “Train Model” untuk memulai proses pembuatan model klasifikasi menggunakan Decision Tree.</p>
+						<p><strong>Tampilkan Hasil: </strong>Sistem akan menampilkan hasil evaluasi model seperti akurasi, precision, recall, dan support.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end single product -->
+
+	<!-- single product -->
+	<div class="single-product mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-1">
+					<img src="{% static 'img/number/6.png' %}" alt="">
+				</div>
+				<div class="col-md-11">
+					<div class="single-product-content">
+						<h3>Masukkan Data untuk Prediksi</h3>
+						<p><strong>Form Input Data: </strong>Temukan form untuk memasukkan data sesuai kondisi Anda.</p>
+						<p><strong>Isi Data: </strong>Masukkan nilai untuk setiap atribut yang diminta sesuai dengan kondisi kesehatan Anda.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end single product -->
+
+	<!-- single product -->
+	<div class="single-product mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-1">
+					<img src="{% static 'img/number/7.png' %}" alt="">
+				</div>
+				<div class="col-md-11">
+					<div class="single-product-content">
+						<h3>Hasil Prediksi</h3>
+						<p><strong>Submit Data: </strong>Klik tombol “Prediksi" setelah mengisi data.</p>
+						<p><strong>Tampilkan Hasil: </strong>Sistem akan menampilkan hasil prediksi yang menyatakan apakah Anda terkena gagal jantung atau tidak.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end single product -->
+
+	<!-- footer -->
+	<div class="footer-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6">
+					<div class="footer-box about-widget">
+						<h2 class="widget-title">About us</h2>
+						<p>Dalam upaya mitigasi penyakit jantung, perkembangan teknologi telah memberikan alat yang dapat membantu dalam diagnosis dini penyakit jantung. Dengan demikian, web prediksi ini dapat menjadi alat yang sangat berguna untuk membantu dalam deteksi dini, pencegahan, dan pengelolaan penyakit jantung.</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box get-in-touch">
+						<h2 class="widget-title">Get in Touch</h2>
+						<ul>
+							<li>Universitas Negeri Malang, Malang</li>
+							<li><a href="https://um.ac.id/">www.um.ac.id</a></li>
+							<li>(0341) 551312</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box pages">
+						<h2 class="widget-title">Pages</h2>
+						<ul>
+							<li><a href="{% url 'home:index' %}">Home</a></li>
+							<li><a href="{% url 'home:about' %}">About</a></li>
+							<li><a href="{% url 'home:panduan' %}">Panduan</a></li>
+							<li><a href="{% url 'uploads:index' %}">Prediksi</a></li>
+							<li><a href="{% url 'home:contact' %}">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end footer -->
+	
+	<!-- copyright -->
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-12">
+					<p>Copyrights &copy; 2024 - <a>Kelompok 3 Data Science | S1 TI A 2022</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end copyright -->
+	
+	<!-- jquery -->
+	<script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+	<!-- bootstrap -->
+	<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+	<!-- count down -->
+	<script src="{% static 'js/jquery.countdown.js' %}"></script>
+	<!-- isotope -->
+	<script src="{% static 'js/jquery.isotope-3.0.6.min.js' %}"></script>
+	<!-- waypoints -->
+	<script src="{% static 'js/waypoints.js' %}"></script>
+	<!-- owl carousel -->
+	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+	<!-- magnific popup -->
+	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+	<!-- mean menu -->
+	<script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+	<!-- sticker js -->
+	<script src="{% static 'js/sticker.js' %}"></script>
+	<!-- main js -->
+	<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

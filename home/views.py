@@ -8,3 +8,15 @@ def index(request):
     dataset = Dataset.objects.all()
     context['datasets'] = dataset
     return render(request, 'home/index.html', context)
+
+def about(request):
+    return render(request, 'about/about.html')
+
+def panduan(request):
+    return render(request, 'panduan/panduan.html')
+
+def prediksi(request):
+    return render(request, 'prediksi/prediksi.html')
+
+def contact(request):
+    return render(request, 'contact/contact.html')

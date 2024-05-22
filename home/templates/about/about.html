@@ -1,0 +1,264 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+    <!-- title -->
+    <title>HeartPredict | About</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.png' %}">
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <!-- animate css -->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <!-- mean menu css -->
+    <link rel="stylesheet" href="{% static 'css/meanmenu.min.css' %}">
+    <!-- main style -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <!-- responsive -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+</head>
+<body>
+    <!--PreLoader-->
+    <div class="loader">
+        <div class="loader-inner">
+            <div class="circle"></div>
+        </div>
+    </div>
+    <!--PreLoader Ends-->
+    
+    <!-- header -->
+    <div class="top-header-area" id="sticker">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 text-center">
+                    <div class="main-menu-wrap">
+                        <!-- logo -->
+                        <div class="site-logo">
+                            <a href="{% url 'home:index' %}">
+                                <img src="{% static 'img/logo.png' %}" alt="">
+                            </a>
+                        </div>
+                        <!-- logo -->
+
+                        <!-- menu start -->
+                        <nav class="main-menu">
+                            <ul>
+                                <li><a href="{% url 'home:index' %}">Home</a></li>
+                                <li class="current-list-item"><a href="{% url 'home:about' %}">About</a></li>
+                                <li><a href="{% url 'home:panduan' %}">Panduan</a></li>
+                                <li><a href="{% url 'uploads:index' %}">Prediksi</a></li>
+                                <li><a href="{% url 'home:contact' %}">Contact</a></li>
+                            </ul>
+                        </nav>
+                        <div class="mobile-menu"></div>
+                        <!-- menu end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end header -->
+    
+    <!-- breadcrumb-section -->
+    <div class="breadcrumb-section breadcrumb-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="breadcrumb-text">
+                        <p>Solusi Kekhawatiranmu</p>
+                        <h1>About Us</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end breadcrumb section -->
+
+    <!-- featured section -->
+    <div class="feature-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="featured-text">
+                        <h2 class="pb-3">Apa itu <span class="orange-text">HeartPredict</span></h2>
+                        <div class="col mb-4 mb-md-5">
+                            <div class="list-box d-flex">
+                                <div class="list-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div class="content">
+                                    <h3>HeartPredict</h3>
+                                    <p>adalah sebuah platform web yang menggunakan metode data mining Decision Tree untuk membuat prediksi terkait risiko gagal jantung. Dengan menggunakan algoritma Decision Tree, HeartPredict menganalisis berbagai faktor risiko yang terkait dengan gagal jantung, seperti riwayat medis, gaya hidup, dan faktor lingkungan.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mb-5 mb-md-5">
+                            <div class="list-box d-flex">
+                                <div class="list-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="content">
+                                    <h3>Para Pengguna</h3>
+                                    <p>dapat memasukkan data mereka ke dalam platform, termasuk informasi seperti usia, jenis kelamin, tekanan darah, kadar kolesterol, riwayat merokok, dan lainnya. Berdasarkan data yang dimasukkan, HeartPredict akan menghasilkan prediksi risiko gagal jantung untuk setiap individu.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mb-5 mb-md-5">
+                            <div class="list-box d-flex">
+                                <div class="list-icon">
+                                    <i class="fas fa-window-maximize"></i>
+                                </div>
+                                <div class="content">
+                                    <h3>Website Ini</h3>
+                                    <p>bertujuan untuk memberikan informasi yang berguna kepada pengguna mengenai potensi risiko gagal jantung yang mereka miliki, sehingga mereka dapat mengambil langkah-langkah pencegahan yang sesuai. HeartPredict dapat menjadi alat yang berguna bagi individu, profesional kesehatan, dan peneliti untuk memahami dan mengelola risiko kesehatan jantung.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end featured section -->
+
+    <!-- shop banner -->
+    <section class="shop-banner">
+        <div class="container">
+            <h3>Periksa Sekarang! <br> sebelum <span class="orange-text">Terlambat</span></h3>
+            <div class="sale-percent"><span>Hanya di www.</span>HeartPredict<span>.com</span></div>
+            <a href="{% url 'uploads:index' %}" class="cart-btn btn-lg">Mulai</a>
+        </div>
+    </section>
+    <!-- end shop banner -->
+
+    <!-- team section -->
+    <div class="mt-150">
+        <div class="container" style="margin-bottom: 300px;">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="section-title">
+                        <h3>Our <span class="orange-text">Team</span></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-team-item">
+                        <h4>ADELIA DESYANA <span>Eka Putri</span></h4>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-team-item">
+                        <h4>ADINDA DINIA <span>Alexandra</span></h4>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
+                    <div class="single-team-item">
+                        <h4>AHMAD 'AMMAR <span>Musyaffa'</span></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 offset-lg-2">
+                    <div class="single-team-item">
+                        <h4>DAVID SATRIA <span>Alamsyah</span></h4>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 offset-lg-0">
+                    <div class="single-team-item">
+                        <h4>KAROLINA <span>Roslyanti Jenudin</span></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end team section -->
+    
+    <!-- footer -->
+    <div class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="footer-box about-widget">
+                        <h2 class="widget-title">About us</h2>
+                        <p>Dalam upaya mitigasi penyakit jantung, perkembangan teknologi telah memberikan alat yang dapat membantu dalam diagnosis dini penyakit jantung. Dengan demikian, web prediksi ini dapat menjadi alat yang sangat berguna untuk membantu dalam deteksi dini, pencegahan, dan pengelolaan penyakit jantung.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-box get-in-touch">
+                        <h2 class="widget-title">Get in Touch</h2>
+                        <ul>
+                            <li>Universitas Negeri Malang, Malang</li>
+                            <li><a href="https://um.ac.id/">www.um.ac.id</a></li>
+                            <li>(0341) 551312</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-box pages">
+                        <h2 class="widget-title">Pages</h2>
+                        <ul>
+                            <li><a href="{% url 'home:index' %}">Home</a></li>
+                            <li><a href="{% url 'home:about' %}">About</a></li>
+                            <li><a href="{% url 'home:panduan' %}">Panduan</a></li>
+                            <li><a href="{% url 'uploads:index' %}">Prediksi</a></li>
+                            <li><a href="{% url 'home:contact' %}">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end footer -->
+    
+    <!-- copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <p>Copyrights &copy; 2024 - <a>Kelompok 3 Data Science | S1 TI A 2022</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end copyright -->
+    
+    <!-- jquery -->
+    <script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+    <!-- bootstrap -->
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <!-- count down -->
+    <script src="{% static 'js/jquery.countdown.js' %}"></script>
+    <!-- isotope -->
+    <script src="{% static 'js/jquery.isotope-3.0.6.min.js' %}"></script>
+    <!-- waypoints -->
+    <script src="{% static 'js/waypoints.js' %}"></script>
+    <!-- owl carousel -->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <!-- magnific popup -->
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <!-- mean menu -->
+    <script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+    <!-- sticker js -->
+    <script src="{% static 'js/sticker.js' %}"></script>
+    <!-- main js -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

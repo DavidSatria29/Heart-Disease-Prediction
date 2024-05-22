@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pembentukan Model</title>
 </head>
+
+<style>
+    
+.gambar-hasil
+{
+    width: 50%;
+    height: 50%;
+}
+
+</style>
 <body>
 
     <h3>Decision Tree Classifier</h3>
@@ -38,6 +48,7 @@
         <input type="submit" value="Prediksi">
     </form>
 
+    <img class="gambar-hasil" src="{{ image.url }}" alt="image from model">
     <a href="{% url 'home:index' %}">Kembali Ke Home</a>
 </body>
 </html>
