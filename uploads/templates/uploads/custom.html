@@ -7,6 +7,10 @@
 </head>
 <body>
     <div>
+        <h3>Preview Dataset</h3>
+        {{ show | safe }}
+    </div>
+    <div>
         <h3>Tipe Data Dan Kelas Label </h3>
             <form action="{% url 'classifier:model' dataset_id=dataset_id %}" method="post">
                 {% csrf_token %}
@@ -18,7 +22,6 @@
                                 <option value="">--Silahkan pilih---</option>
                                 <option value="category">Kategori</option>
                                 <option value="numeric">Numerik</option>
-                                <option value="not-selected">Tidak Dipilih</option>
                             </select>
                         {% endif %}
                     {% endfor %}
@@ -41,11 +44,18 @@
                 <br>
                 <div>
                     {% if dataset != 'csrfmiddlewaretoken' %}
+                    <label for="criterion">Criterion</label>
+                    <select name="criterion" id="criterion">
+                        <option value="">--Silahkan pilih---</option>
+                        <option value="gini">Gini</option>
+                        <option value="entropy">Entropy</option>
+                    </select>
+
                     <label for="max_depth">Max Depth</label>
                     <input type="number" name="max_depth" id="max_depth">
 
                     <label for="min_samples_split">Min Samples Split</label>
-                    <input type="number" name="min_samples_split" id="min_samples_split">
+                    <input type="number" name="min_samples_split" id="min_samples_split" min="2">
 
                     <label for="min_samples_leaf">Min Samples Leaf</label>
                     <input type="number" name="min_samples_leaf" id="min_samples_leaf">

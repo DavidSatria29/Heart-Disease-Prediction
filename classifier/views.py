@@ -25,15 +25,12 @@ def model(request, dataset_id):
     if request.method == 'POST':
         categorical = []
         numerical = []
-        not_selected = []
 
         for key, value in request.POST.items():
             if value == 'category':
                 categorical.append(key)
             elif value == 'numeric':
                 numerical.append(key)
-            elif value == 'not_selected':
-                not_selected.append(key)
 
         # Load dataset
         dataset = Dataset.objects.get(id=dataset_id)
@@ -41,11 +38,6 @@ def model(request, dataset_id):
         dataset_path = os.path.join(settings.MEDIA_ROOT, str(dataset_filename))
 
         # Preprocess dataset
-        dataset = pd.read_csv(dataset_path)
-        dataset.drop(not_selected, axis=1, inplace=True)
-        dataset.to_csv(dataset_path, index=False)
-
-        # Load dataset
         dataset = pd.read_csv(dataset_path)
 
         # Convert categorical data type
@@ -57,10 +49,12 @@ def model(request, dataset_id):
         attr_features = dataset.drop(label, axis=1)
 
         # get parameters for model
-        max_depth = int(request.POST['max_depth'])
-        min_samples_split = int(request.POST['min_samples_split'])  
-        min_samples_leaf = int(request.POST['min_samples_leaf'])
-
+        parameters = {
+            'criterion': request.POST['criterion'],
+            'max_depth': int(request.POST['max_depth']),
+            'min_samples_split': int(request.POST['min_samples_split']),
+            'min_samples_leaf': int(request.POST['min_samples_leaf'])
+        }
         # Train model
         kf = KFold(n_splits=10)
         performances = []
@@ -70,7 +64,7 @@ def model(request, dataset_id):
             X_train, X_test = attr_features.iloc[train_index], attr_features.iloc[test_index]
             y_train, y_test = attr_label.iloc[train_index], attr_label.iloc[test_index]
             # Latih model
-            clf = DecisionTreeClassifier(max_depth=max_depth, min_samples_split=min_samples_split, min_samples_leaf=min_samples_leaf)
+            clf = DecisionTreeClassifier(**parameters)
             clf.fit(X_train, y_train)
             
             # Evaluasi model
@@ -88,31 +82,47 @@ def model(request, dataset_id):
         report_metrics = report_list[best_model_index]
         best_model = models[best_model_index]
 
+        class_name = list(best_model.classes_)
+        class_name = [str(i) for i in class_name]
         # Simpan model ke dalam file
         file_path = f'models/{dataset_title}.joblib'
         file_source = f'image/{dataset_title}'
         joblib.dump(best_model, 'media/'+ file_path)
-        dot_data = tree.export_graphviz(best_model, out_file=None, filled=True, rounded=True, special_characters=True)
+        dot_data = tree.export_graphviz(best_model, out_file=None, filled=True, rounded=True, special_characters=True, feature_names=attr_features.columns, class_names=class_name)
         graph = graphviz.Source(dot_data)
-        graph.render('media/'+ file_source, format='png')
+        graph.render('media/'+ file_source, format='pdf')
 
         # Simpan model ke dalam database
         model.title = dataset_title
         model.file = file_path
         model.label = label
-        model.image = file_source + '.png'
+        model.image = file_source + '.pdf'
         model.save()
 
+        # show 10 data in dataset
+        show = dataset.head(10)
         # deploy to view
+        context['show'] = show.to_html(index=False)
         context['label'] = label
         context['performances'] = report_metrics
         return render(request, 'classifier/model.html', context)
     else:
+        dataset = Dataset.objects.get(id=dataset_id)
+        dataset_title = dataset.title
+        dataset_path = os.path.join(settings.MEDIA_ROOT, str(dataset.file))
+        dataset = pd.read_csv(dataset_path)
+        show = dataset.head(10)
         model_title = Model.objects.get(title=dataset_title)
         model_image = model_title.image
         model_label = model_title.label
+        model_image = model_title.image
+        context['show'] = show.to_html(index=False)
         context['label'] = model_label
+<<<<<<< HEAD
         context['image'] = model_title.image
+=======
+        context['image'] = model_image
+>>>>>>> 14520758059e59c9581aeb020b4bbc3460d5f2f1
         return render(request, 'classifier/model.html', context)
     
     

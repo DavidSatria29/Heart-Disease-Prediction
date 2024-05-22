@@ -17,9 +17,13 @@ py -m pip install -r requirements.txt
 
 Grphviz has additional requirements to be used. Graphviz can only be used if installed directly through the web so that it can render the generated dot source code. You can install graphviz directly on the following web link (https://www.graphviz.org/download/). For Windows users can see the tutorial on the following link (https://forum.graphviz.org/t/new-simplified-installation-procedure-on-windows/224)
 
-## Running The Web
+## Running migration and web
 
 In the same directory as the 'manage.py' directory. run the command on the terminal 
+
+```bash
+py manage.py migrate
+```
 
 ```bash
 py manage.py runserver

@@ -7,5 +7,4 @@ app_name = 'uploads'
 urlpatterns = [
     path('', views.index, name='index'),
     path('custom/<int:dataset_id>/', views.custom, name='custom'),
-    # path("set_attr/<int:dataset_id>", views.set_attr, name="set_attr"),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
