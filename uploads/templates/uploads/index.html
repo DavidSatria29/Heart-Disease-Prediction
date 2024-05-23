@@ -103,15 +103,13 @@
 					<div class="single-product-content">
 						<form action="" method="post" enctype="multipart/form-data">
                             {% csrf_token %}
-                            {{ form }}
 							<div class="form-group">
 								<h2 for="exampleFormControlFile1" class="upload-dataset-title">Upload Dataset</h2>
-								<input type="text" placeholder="Nama Dataset" class="dataset-name" name="dataset-name" required>
-								<input type="file" class="form-control-file dataset-input" id="upload-dataset" name="file" required>
+								{{ form }}
 								<div class="file-name" id="file-name"></div>
 							</div>
+							<input type="submit" value="Upload" class="submit-form-btn">
 						</form>
-						<button class="submit-form-btn">Upload</button>
 					</div>
 				</div>
 			</div>
@@ -142,6 +140,12 @@
 								<select name="atribut-dataset" id="{{ dataset }}">
 									<option value="">-- Silahkan pilih --</option>
 									<option value="category">Kelas Label dari Dataset</option>
+								</select>
+								<label for="atribut-dataset" class="atribut-dataset-title">Criterion</label>
+								<select name="atribut-dataset">
+									<option value="">-- Silahkan pilih --</option>
+									<option value="category">Gini</option>
+									<option value="category">Entropy</option>
 								</select>
 								<label for="atribut-dataset" class="atribut-dataset-title">Max Depth</label>
 								<input type="number" class="depth-input">

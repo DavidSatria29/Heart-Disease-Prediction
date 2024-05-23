@@ -2,10 +2,6 @@ from django.urls import path
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
-<<<<<<< HEAD
-
-=======
->>>>>>> 14520758059e59c9581aeb020b4bbc3460d5f2f1
 
 app_name = 'classifier'
 urlpatterns = [

@@ -118,11 +118,7 @@ def model(request, dataset_id):
         model_image = model_title.image
         context['show'] = show.to_html(index=False)
         context['label'] = model_label
-<<<<<<< HEAD
         context['image'] = model_title.image
-=======
-        context['image'] = model_image
->>>>>>> 14520758059e59c9581aeb020b4bbc3460d5f2f1
         return render(request, 'classifier/model.html', context)
     
     
