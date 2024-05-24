@@ -52,6 +52,10 @@
         .single-product-content .form-group .form-control {
             height: 50%;
         }
+
+		.single-product-content .form-group .form-control #label {
+			width: 100%;
+		}
         
         .single-product-content .form-group .row .col-md-6 label,
         .single-product-content .form-group .row .col-md-6 select,
@@ -64,7 +68,40 @@
             width: 100%;
         }
 
+		.single-product-content .table-responsive {
+			width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+		}
+
+		.single-product-content table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        .single-product-content table th, .single-product-content table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+            white-space: nowrap;
+        }
+        
+        .single-product-content table th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+        
+        .single-product-content table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
         @media (max-width: 768px) {
+			.single-product-content {
+				overflow: hidden;
+			}
             .single-product-content .form-group .row .col-md-6 {
                 width: 100%;
             }
@@ -137,13 +174,13 @@
                 <div class="col-md-11">
                     <div class="single-product-content">
                         <form action="{% url 'classifier:model' dataset_id=dataset_id %}" method="post" enctype="multipart/form-data">
+							<h2 for="exampleFormControlFile1" class="upload-dataset-title">Preview Dataset</h2>
                             {{ show | safe }}
                             {% csrf_token %}
                             <div class="form-group">
                                 <h2 for="exampleFormControlFile1" class="upload-dataset-title">Tipe Data Dan Kelas Label</h2>
                                 
                                 <!-- Atribut Dataset -->
-                                <h2 class="atribut-dataset-title">Atribut Dataset</h2>
                                 <div class="row">
                                     {% for dataset in datasets %}
                                         {% if dataset != 'csrfmiddlewaretoken' %}
@@ -159,10 +196,11 @@
                                     {% endfor %}
                                 </div>
     
+								<h2 class="atribut-dataset-title">Pelabelan Dataset</h2>
                                 <!-- Kelas Label -->
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label for="label" class="atribut-dataset-title">Kelas Label</label>
+                                        <label for="label" class="atribut-dataset-title" id>Kelas Label</label>
                                         <select name="label" id="label" class="form-control">
                                             <option value="">--Silahkan pilih---</option>
                                             {% for dataset in datasets %}
