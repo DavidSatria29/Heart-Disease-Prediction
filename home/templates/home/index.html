@@ -2,286 +2,334 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/" />
 
-	<!-- title -->
-	<title>HeartPredict | Home</title>
+    <!-- title -->
+    <title>HeartPredict | Home</title>
 
-	<!-- favicon -->
-	<link rel="icon" href="{% static 'img/favicon.png' %}">
-	<!-- google font -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
-	<!-- fontawesome -->
-    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <!-- favicon -->
+    <link rel="icon" href="{% static 'img/favicon.png' %}" />
+    <!-- google font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap"
+      rel="stylesheet" />
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}" />
     <!-- bootstrap -->
-    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link
+      rel="stylesheet"
+      href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
     <!-- owl carousel -->
-    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}" />
     <!-- magnific popup -->
-    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" />
     <!-- animate css -->
-    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}" />
     <!-- mean menu css -->
-    <link rel="stylesheet" href="{% static 'css/meanmenu.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/meanmenu.min.css' %}" />
     <!-- main style -->
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
     <!-- responsive -->
-    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
-
-</head>
-<body>
-	
-	<!--PreLoader-->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
+  </head>
+  <body>
+    <!--PreLoader-->
     <div class="loader">
-        <div class="loader-inner">
-            <div class="circle"></div>
-        </div>
+      <div class="loader-inner">
+        <div class="circle"></div>
+      </div>
     </div>
     <!--PreLoader Ends-->
-	
-	<!-- header -->
-	<div class="top-header-area" id="sticker">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12 col-sm-12 text-center">
-					<div class="main-menu-wrap">
-						<!-- logo -->
-						<div class="site-logo">
-							<a href="index.html">
-								<img src="{% static 'img/logo.png' %%}" alt="">
-							</a>
-						</div>
-						<!-- logo -->
 
-						<!-- menu start -->
-						<nav class="main-menu">
-							<ul>
-								<li class="current-list-item"><a href="{% url 'home:index' %}">Home</a></li>
-                                <li><a href="{% url 'home:about' %}">About</a></li>
-                                <li><a href="{% url 'home:panduan' %}">Panduan</a></li>
-                                <li><a href="{% url 'uploads:index' %}">Prediksi</a></li>
-                                <li><a href="{% url 'home:contact' %}">Contact</a></li>
-								
-							</ul>
-						</nav>
-						<div class="mobile-menu"></div>
-						<!-- menu end -->
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end header -->
-	
-	<!-- hero area -->
-	<div class="hero-area hero-bg">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-9 offset-lg-2 text-center">
-					<div class="hero-text">
-						<div class="hero-text-tablecell">
-							<p class="subtitle">Your health is important</p>
-              				<h1>Prediksi Gagal Jantung</h1>
-							<div class="hero-btns">
-								<a href="prediksi.html" class="boxed-btn">Cek Sekarang</a>
-								<a href="panduan.html" class="bordered-btn">Cara Kerja</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end hero area -->
+    <!-- header -->
+    <div class="top-header-area" id="sticker">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-sm-12 text-center">
+            <div class="main-menu-wrap">
+              <!-- logo -->
+              <div class="site-logo">
+                <a href="index.html">
+                  <img src="{% static 'img/logo.png' %%}" alt="" />
+                </a>
+              </div>
+              <!-- logo -->
 
-	<!-- features list section -->
-	<div class="list-section pt-80 pb-80">
-		<div class="container">
-
-			<div class="row">
-				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-					<div class="list-box d-flex align-items-center">
-						<div class="list-icon">
-							<i class="fas fa-user-md"></i>
-						</div>
-						<div class="content">
-							<h3>Prediksi Risiko</h3>
-							<p>dengan Akurasi Tinggi</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-					<div class="list-box d-flex align-items-center">
-						<div class="list-icon">
-							<i class="fas fa-phone-volume"></i>
-						</div>
-						<div class="content">
-							<h3>Layanan Gratis</h3>
-							<p>dan Mudah Digunakan</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="list-box d-flex justify-content-start align-items-center">
-						<div class="list-icon">
-							<i class="fas fa-random"></i>
-						</div>
-						<div class="content">
-							<h3>Dengan Algoritma</h3>
-							<p>Decision Tree</p>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</div>
-	<!-- end features list section -->	
-
-	<!-- testimonail-section -->
-	<div class="testimonail-section mt-150 mb-150">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-10 offset-lg-1 text-center">
-					<div class="testimonial-sliders">
-						<div class="single-testimonial-slider">
-							<div class="client-avater">
-								<img src="assets/img/avaters/avatar1.png" alt="">
-							</div>
-							<div class="client-meta">
-								<h3>dr. Isman Firdaus Sp.JP (K), FIHA, FAPSIC, FAsCC, FESC, FSCAI <span>p2ptm.kemkes.go.id</span></h3>
-								<p class="testimonial-body">
-									" Gagal jantung adalah kondisi yang serius dan bisa mengancam nyawa. Jika tidak diobati dengan tepat, dapat menyebabkan komplikasi fatal. "
-								</p>
-								<div class="last-icon">
-									<i class="fas fa-quote-right"></i>
-								</div>
-							</div>
-						</div>
-						<div class="single-testimonial-slider">
-							<div class="client-avater">
-								<img src="assets/img/avaters/avatar2.png" alt="">
-							</div>
-							<div class="client-meta">
-								<h3>dr. Facmi Achmad m, Sp.Jp.FIHA <span>primayahospital.com</span></h3>
-								<p class="testimonial-body">
-									" Gagal jantung kongestif merupakan silent killer yang berbahaya. Masyarakat perlu mengenali gejalanya dan mencari perawatan secepat mungkin. "
-								</p>
-								<div class="last-icon">
-									<i class="fas fa-quote-right"></i>
-								</div>
-							</div>
-						</div>
-						<div class="single-testimonial-slider">
-							<div class="client-avater">
-								<img src="assets/img/avaters/avatar3.png" alt="">
-							</div>
-							<div class="client-meta">
-								<h3>dr. Pittara <span>alodokter.com</span></h3>
-								<p class="testimonial-body">
-									" Berbagai spektrum penyakit kardiovaskular, termasuk gagal jantung, dapat menjadi ancaman serius bagi kesehatan jantung. "
-								</p>
-								<div class="last-icon">
-									<i class="fas fa-quote-right"></i>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end testimonail-section -->
-	
-	<!-- advertisement section -->
-	<div class="abt-section mb-150">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-md-12">
-					<div class="abt-bg">
-						<a href="https://www.youtube.com/watch?v=y6w8EehiDek" class="video-play-btn popup-youtube"><i class="fas fa-play"></i></a>
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-12">
-					<div class="abt-text">
-						<p class="top-sub">www.heartpredict.com</p>
-						<h2>Kenapa <span class="orange-text">HeartPredict</span></h2>
-						<p>Berdasarkan hasil penelitian yang dipublikasikan pada International Journal of Cardiology, jumlah penderita gagal jantung di Indonesia adalah sebesar 5% dari total jumlah penduduk. Deteksi dini dan pencegahan adalah kunci untuk mengurangi jumlah kematian akibat penyakit jantung.</p>
-						<p>Dalam upaya mitigasi penyakit jantung, perkembangan teknologi telah memberikan alat yang dapat membantu dalam diagnosis dini penyakit jantung. Dengan demikian, web prediksi ini dapat menjadi alat yang sangat berguna untuk membantu dalam deteksi dini, pencegahan, dan pengelolaan penyakit jantung.</p>
-						<a href="about.html" class="boxed-btn mt-4">Selengkapnya</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end advertisement section -->
-	
-	<!-- shop banner -->
-	<section class="shop-banner">
-    	<div class="container">
-        	<h3>Periksa Sekarang! <br> sebelum <span class="orange-text">Terlambat</span></h3>
-            <div class="sale-percent"><span>Hanya di www.</span>HeartPredict<span>.com</span></div>
-            <a href="prediksi.html" class="cart-btn btn-lg">Mulai</a>
+              <!-- menu start -->
+              <nav class="main-menu">
+                <ul>
+                  <li class="current-list-item">
+                    <a href="{% url 'home:index' %}">Home</a>
+                  </li>
+                  <li><a href="{% url 'home:about' %}">About</a></li>
+                  <li><a href="{% url 'home:panduan' %}">Panduan</a></li>
+                  <li><a href="{% url 'uploads:index' %}">Prediksi</a></li>
+                  <li><a href="{% url 'home:contact' %}">Contact</a></li>
+                </ul>
+              </nav>
+              <div class="mobile-menu"></div>
+              <!-- menu end -->
+            </div>
+          </div>
         </div>
-    </section>
-	<!-- end shop banner -->
+      </div>
+    </div>
+    <!-- end header -->
 
-	<!-- footer -->
-	<div class="footer-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-md-6">
-					<div class="footer-box about-widget">
-						<h2 class="widget-title">About us</h2>
-						<p>Dalam upaya mitigasi penyakit jantung, perkembangan teknologi telah memberikan alat yang dapat membantu dalam diagnosis dini penyakit jantung. Dengan demikian, web prediksi ini dapat menjadi alat yang sangat berguna untuk membantu dalam deteksi dini, pencegahan, dan pengelolaan penyakit jantung.</p>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box get-in-touch">
-						<h2 class="widget-title">Get in Touch</h2>
-						<ul>
-							<li>Universitas Negeri Malang, Malang</li>
-							<li><a href="https://um.ac.id/">www.um.ac.id</a></li>
-							<li>(0341) 551312</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box pages">
-						<h2 class="widget-title">Pages</h2>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="panduan.html">Panduan</a></li>
-							<li><a href="prediksi.html">Prediksi</a></li>
-							<li><a href="contact.html">Contact</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end footer -->
-	
-	<!-- copyright -->
-	<div class="copyright">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2024 - <a>Kelompok 3 Data Science | S1 TI A 2022</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end copyright -->
-	
-	<!-- jquery -->
-	<script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+    <!-- hero area -->
+    <div class="hero-area hero-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9 offset-lg-2 text-center">
+            <div class="hero-text">
+              <div class="hero-text-tablecell">
+                <p class="subtitle">Your health is important</p>
+                <h1>Prediksi Gagal Jantung</h1>
+                <div class="hero-btns">
+                  <a href="prediksi.html" class="boxed-btn">Cek Sekarang</a>
+                  <a href="panduan.html" class="bordered-btn">Cara Kerja</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end hero area -->
+
+    <!-- features list section -->
+    <div class="list-section pt-80 pb-80">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+            <div class="list-box d-flex align-items-center">
+              <div class="list-icon">
+                <i class="fas fa-user-md"></i>
+              </div>
+              <div class="content">
+                <h3>Prediksi Risiko</h3>
+                <p>dengan Akurasi Tinggi</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+            <div class="list-box d-flex align-items-center">
+              <div class="list-icon">
+                <i class="fas fa-phone-volume"></i>
+              </div>
+              <div class="content">
+                <h3>Layanan Gratis</h3>
+                <p>dan Mudah Digunakan</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div
+              class="list-box d-flex justify-content-start align-items-center">
+              <div class="list-icon">
+                <i class="fas fa-random"></i>
+              </div>
+              <div class="content">
+                <h3>Dengan Algoritma</h3>
+                <p>Decision Tree</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end features list section -->
+
+    <!-- testimonail-section -->
+    <div class="testimonail-section mt-150 mb-150">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 offset-lg-1 text-center">
+            <div class="testimonial-sliders">
+              <div class="single-testimonial-slider">
+                <div class="client-avater">
+                  <img src="assets/img/avaters/avatar1.png" alt="" />
+                </div>
+                <div class="client-meta">
+                  <h3>
+                    dr. Isman Firdaus Sp.JP (K), FIHA, FAPSIC, FAsCC, FESC,
+                    FSCAI <span>p2ptm.kemkes.go.id</span>
+                  </h3>
+                  <p class="testimonial-body">
+                    " Gagal jantung adalah kondisi yang serius dan bisa
+                    mengancam nyawa. Jika tidak diobati dengan tepat, dapat
+                    menyebabkan komplikasi fatal. "
+                  </p>
+                  <div class="last-icon">
+                    <i class="fas fa-quote-right"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="single-testimonial-slider">
+                <div class="client-avater">
+                  <img src="assets/img/avaters/avatar2.png" alt="" />
+                </div>
+                <div class="client-meta">
+                  <h3>
+                    dr. Facmi Achmad m, Sp.Jp.FIHA
+                    <span>primayahospital.com</span>
+                  </h3>
+                  <p class="testimonial-body">
+                    " Gagal jantung kongestif merupakan silent killer yang
+                    berbahaya. Masyarakat perlu mengenali gejalanya dan mencari
+                    perawatan secepat mungkin. "
+                  </p>
+                  <div class="last-icon">
+                    <i class="fas fa-quote-right"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="single-testimonial-slider">
+                <div class="client-avater">
+                  <img src="assets/img/avaters/avatar3.png" alt="" />
+                </div>
+                <div class="client-meta">
+                  <h3>dr. Pittara <span>alodokter.com</span></h3>
+                  <p class="testimonial-body">
+                    " Berbagai spektrum penyakit kardiovaskular, termasuk gagal
+                    jantung, dapat menjadi ancaman serius bagi kesehatan
+                    jantung. "
+                  </p>
+                  <div class="last-icon">
+                    <i class="fas fa-quote-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end testimonail-section -->
+
+    <!-- advertisement section -->
+    <div class="abt-section mb-150">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-12">
+            <div class="abt-bg">
+              <a
+                href="https://www.youtube.com/watch?v=y6w8EehiDek"
+                class="video-play-btn popup-youtube"
+                ><i class="fas fa-play"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <div class="abt-text">
+              <p class="top-sub">www.heartpredict.com</p>
+              <h2>Kenapa <span class="orange-text">HeartPredict</span></h2>
+              <p>
+                Berdasarkan hasil penelitian yang dipublikasikan pada
+                International Journal of Cardiology, jumlah penderita gagal
+                jantung di Indonesia adalah sebesar 5% dari total jumlah
+                penduduk. Deteksi dini dan pencegahan adalah kunci untuk
+                mengurangi jumlah kematian akibat penyakit jantung.
+              </p>
+              <p>
+                Dalam upaya mitigasi penyakit jantung, perkembangan teknologi
+                telah memberikan alat yang dapat membantu dalam diagnosis dini
+                penyakit jantung. Dengan demikian, web prediksi ini dapat
+                menjadi alat yang sangat berguna untuk membantu dalam deteksi
+                dini, pencegahan, dan pengelolaan penyakit jantung.
+              </p>
+              <a href="about.html" class="boxed-btn mt-4">Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end advertisement section -->
+
+    <!-- shop banner -->
+    <section class="shop-banner">
+      <div class="container">
+        <h3>
+          Periksa Sekarang! <br />
+          sebelum <span class="orange-text">Terlambat</span>
+        </h3>
+        <div class="sale-percent">
+          <span>Hanya di www.</span>HeartPredict<span>.com</span>
+        </div>
+        <a href="prediksi.html" class="cart-btn btn-lg">Mulai</a>
+      </div>
+    </section>
+    <!-- end shop banner -->
+
+    <!-- footer -->
+    <div class="footer-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <div class="footer-box about-widget">
+              <h2 class="widget-title">About us</h2>
+              <p>
+                Dalam upaya mitigasi penyakit jantung, perkembangan teknologi
+                telah memberikan alat yang dapat membantu dalam diagnosis dini
+                penyakit jantung. Dengan demikian, web prediksi ini dapat
+                menjadi alat yang sangat berguna untuk membantu dalam deteksi
+                dini, pencegahan, dan pengelolaan penyakit jantung.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-box get-in-touch">
+              <h2 class="widget-title">Get in Touch</h2>
+              <ul>
+                <li>Universitas Negeri Malang, Malang</li>
+                <li><a href="https://um.ac.id/">www.um.ac.id</a></li>
+                <li>(0341) 551312</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-box pages">
+              <h2 class="widget-title">Pages</h2>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="panduan.html">Panduan</a></li>
+                <li><a href="prediksi.html">Prediksi</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end footer -->
+
+    <!-- copyright -->
+    <div class="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-12">
+            <p>
+              Copyrights &copy; 2024 -
+              <a>Kelompok 3 Data Science | S1 TI A 2022</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end copyright -->
+
+    <!-- jquery -->
+    <script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
     <!-- bootstrap -->
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
     <!-- count down -->
@@ -300,6 +348,5 @@
     <script src="{% static 'js/sticker.js' %}"></script>
     <!-- main js -->
     <script src="{% static 'js/main.js' %}"></script>
-
-</body>
+  </body>
 </html>
