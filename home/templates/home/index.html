@@ -17,8 +17,8 @@
                 <p class="subtitle">Your health is important</p>
                 <h1>Prediksi Gagal Jantung</h1>
                 <div class="hero-btns">
-                  <a href="prediksi.html" class="boxed-btn">Cek Sekarang</a>
-                  <a href="panduan.html" class="bordered-btn">Cara Kerja</a>
+                  <a href="{% url 'home:list_dataset' %}" class="boxed-btn">Cek Sekarang</a>
+                  <a href="{% url 'home:panduan' %}" class="bordered-btn">Cara Kerja</a>
                 </div>
               </div>
             </div>
@@ -169,7 +169,7 @@
                 menjadi alat yang sangat berguna untuk membantu dalam deteksi
                 dini, pencegahan, dan pengelolaan penyakit jantung.
               </p>
-              <a href="about.html" class="boxed-btn mt-4">Selengkapnya</a>
+              <a href="{% url 'home:about' %}" class="boxed-btn mt-4">Selengkapnya</a>
             </div>
           </div>
         </div>
@@ -187,7 +187,7 @@
         <div class="sale-percent">
           <span>Hanya di www.</span>HeartPredict<span>.com</span>
         </div>
-        <a href="prediksi.html" class="cart-btn btn-lg">Mulai</a>
+        <a href="{% url 'home:list_dataset' %}" class="cart-btn btn-lg">Mulai</a>
       </div>
     </section>
     <!-- end shop banner -->
