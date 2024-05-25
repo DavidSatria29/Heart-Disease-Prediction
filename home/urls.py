@@ -9,4 +9,5 @@ urlpatterns = [
     path('panduan/', views.panduan, name='panduan'),
     path('prediksi/', views.prediksi, name='prediksi'),
     path('contact/', views.contact, name='contact'),
+    path('daftar_dataset/', views.list_dataset, name='list_dataset'),
 ]

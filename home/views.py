@@ -20,3 +20,9 @@ def prediksi(request):
 
 def contact(request):
     return render(request, 'contact/contact.html')
+
+def list_dataset(request):
+    context = {}
+    dataset = Dataset.objects.all()
+    context['datasets'] = dataset
+    return render(request, 'home/listDataset.html', context)

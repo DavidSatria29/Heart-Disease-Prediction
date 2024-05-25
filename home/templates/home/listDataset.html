@@ -1,0 +1,86 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block title %}
+    Heart Predict | Daftar Dataset
+{% endblock %}
+{% block prediksi %}
+    current-list-item
+{% endblock %}
+{% block content %}
+
+    <!-- breadcrumb-section -->
+    <div class="breadcrumb-section breadcrumb-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2 text-center">
+            <div class="breadcrumb-text">
+              <p>Coba Sekarang</p>
+              <h1>Prediksi</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end breadcrumb section -->
+    <!-- Daftar Dataset Start -->
+    <div class="single-product mt-150 mb-150">
+      <div class="container">
+        <div class="row">
+          <!-- <div class="col-md-1">
+					<img src="{% static 'img/number/1.png' %}" alt="">
+				</div> -->
+          <div class="col-md-11">
+            <div class="single-product-content">
+                <h2>Daftar Dataset</h2>
+                <p>
+                    Berikut adalah daftar dataset yang tersedia di website ini.
+                </p>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Nama Dataset</th>
+                        <th scope="col">Link Dataset</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for dataset in datasets %}
+                        <tr>
+                            <th scope="row">{{ forloop.counter }}</th>
+                            <td>{{ dataset.title }}</td>
+                            <td><a href="{% url 'classifier:model' dataset_id=dataset.id %}">tekan link ini</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Daftar Dataset End -->
+    
+    <!-- Upload Dataset Start -->
+    <div class="single-product mt-150 mb-150">
+      <div class="container">
+        <div class="row">
+          <!-- <div class="col-md-1">
+					<img src="{% static 'img/number/1.png' %}" alt="">
+				</div> -->
+          <div class="col-md-11">
+            <div class="single-product-content">
+                <p> Ingin upload Dataset Baru ?</p>
+                <p>Silahkan Tekan tombol Dibawah ini</p>
+                <a href="{% url 'uploads:index' %}" class="btn btn-primary">Upload Dataset</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Upload Dataset End -->
+
+    
+{% endblock %}
+
