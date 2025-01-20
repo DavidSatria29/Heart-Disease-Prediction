@@ -1,3 +1,7 @@
+## Overview
+Heart Predict is a web-based application that leverages the power of the **Decision Tree Algorithm** to analyze user health data and predict the likelihood of heart failure. The Decision Tree algorithm was chosen for its ability to handle complex datasets and provide clear, interpretable results for users.
+
+
 ## Made With Django Framework
 
 More information can be seen by pressing this link (https://www.djangoproject.com/)
