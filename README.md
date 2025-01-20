@@ -19,7 +19,7 @@ Ensure you have the following installed on your system:
 ### 2. Clone the Repository
 Clone the project repository to your local machine:
 ```bash
-git clone <[repository-url>](https://github.com/DavidSatria29/Heart-Disease-Prediction/)
+git clone [repository-url>
 cd <repository-folder>
 ```
 
