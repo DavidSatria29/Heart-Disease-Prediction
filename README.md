@@ -55,5 +55,6 @@ For detailed guidance on using the website and understanding its features, pleas
 - Step-by-step instructions for using the website.
 - Explanations about heart failure risk detection.
 - Details about the Decision Tree algorithm.
+
 The Manual Book can be accessed at:
 (https://drive.google.com/drive/folders/1OV99LSZb4pI4sQzUAE6Mc5066FDC5VWF?usp=sharing)
