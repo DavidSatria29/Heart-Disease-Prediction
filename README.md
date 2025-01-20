@@ -8,12 +8,27 @@ More information can be seen by pressing this link (https://www.djangoproject.co
 
 ## Install Dependencies
 
-- install django framework
+Follow the steps below to set up and run the Heart Predict project:
+
+### 1. Prerequisites
+Ensure you have the following installed on your system:
+- Python (version 3.8 or above)
+- Virtual Environment (`venv` or `virtualenv`)
+- Git
+
+### 2. Clone the Repository
+Clone the project repository to your local machine:
+```bash
+git clone <[repository-url>](https://github.com/DavidSatria29/Heart-Disease-Prediction/)
+cd <repository-folder>
+```
+
+### 3. Install Djanggo Framework
 ```bash
 py -m pip install Django
 ```
 
-- install library 
+### 4. Install Library
 ```bash
 py -m pip install -r requirements.txt
 ```
